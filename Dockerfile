@@ -3,7 +3,7 @@ FROM node:18-alpine as frontend-build
 
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
-RUN npm ci --only=production
+RUN npm ci
 
 COPY frontend/ ./
 RUN npm run build
@@ -18,9 +18,9 @@ RUN apt-get update && apt-get install -y \
     make \
     libssl-dev \
     libffi-dev \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /app
 
 # Install Python dependencies
@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend code
 COPY app/ ./app/
 
-# Copy built frontend
+# Copy built frontend to static directory
 COPY --from=frontend-build /app/frontend/build ./static/
 
 # Create reports directory
@@ -40,12 +40,5 @@ RUN mkdir -p reports
 RUN useradd -m -u 1000 scanner && chown -R scanner:scanner /app
 USER scanner
 
-# Expose port
-EXPOSE 8000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8000/ || exit 1
-
-# Start command
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use PORT environment variable from Render
+CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT

@@ -159,3 +159,9 @@ async def serve_react_app(full_path: str):
 # This should be the very last part of your file
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+    @app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    if full_path.startswith(("api", "docs", "redoc", "scan", "report")):
+        raise HTTPException(status_code=404, detail="Not found")
+    return FileResponse("static/index.html")
