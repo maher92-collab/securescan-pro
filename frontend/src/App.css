@@ -1,0 +1,241 @@
+/* frontend/src/App.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles for enhanced visual effects */
+.container {
+  max-width: 1200px;
+}
+
+/* Glassmorphism effect for cards */
+.bg-gray-800\/50 {
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+/* Enhanced gradient backgrounds */
+.bg-gradient-to-br {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #1e3a8a 100%);
+}
+
+/* Animated progress bar */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Enhanced hover effects */
+.hover\:bg-gray-600:hover {
+  background-color: rgb(75 85 99);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: rgb(29 78 216);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Loading spinner enhancement */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Card hover effects */
+.hover\:bg-gray-700:hover {
+  background-color: rgb(55 65 81);
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+/* Table enhancements */
+table {
+  border-spacing: 0;
+}
+
+tbody tr:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+  transition: background-color 0.2s ease;
+}
+
+/* Status indicators */
+.status-present {
+  color: rgb(34 197 94);
+}
+
+.status-missing {
+  color: rgb(239 68 68);
+}
+
+.status-weak {
+  color: rgb(245 158 11);
+}
+
+/* Severity color enhancements */
+.severity-critical {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: rgb(248 113 113);
+}
+
+.severity-high {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: rgb(251 191 36);
+}
+
+.severity-medium {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.1) 0%, rgba(202, 138, 4, 0.1) 100%);
+  border-color: rgba(234, 179, 8, 0.3);
+  color: rgb(250 204 21);
+}
+
+.severity-low {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: rgb(96 165 250);
+}
+
+/* Responsive design enhancements */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .grid-cols-2.md\:grid-cols-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .text-4xl {
+    font-size: 2.5rem;
+  }
+}
+
+/* Focus states for accessibility */
+input:focus, 
+button:focus {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+}
+
+/* Animation for scan results appearance */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scan-results {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Enhanced button states */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* Custom radio button styling */
+input[type="radio"] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgb(107 114 128);
+  border-radius: 50%;
+  background: transparent;
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  border-color: rgb(59 130 246);
+  background: rgb(59 130 246);
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgb(107 114 128);
+  border-radius: 0.25rem;
+  background: transparent;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  border-color: rgb(59 130 246);
+  background: rgb(59 130 246);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
