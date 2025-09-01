@@ -10,6 +10,7 @@ import uvicorn
 from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from .models import ScanRequest, ScanResponse, ScanStatus
 from .report_generator import ReportGenerator
@@ -138,5 +139,23 @@ def update_progress(job_id: str, progress: int):
     if job_id in jobs_storage:
         jobs_storage[job_id]["progress"] = progress
 
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+# Serve React static files
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Serve React app for all non-API routes
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    # Don't interfere with API routes
+    if full_path.startswith("api/") or full_path.startswith("docs") or full_path.startswith("redoc"):
+        raise HTTPException(status_code=404, detail="Not found")
+    
+    # Serve React app
+    return FileResponse("static/index.html")
+
+# This should be the very last part of your file
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
