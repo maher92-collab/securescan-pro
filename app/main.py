@@ -144,14 +144,14 @@ def update_progress(job_id: str, progress: int):
         jobs_storage[job_id]["progress"] = progress
 
 if os.path.exists("static"):
-    app.mount("/static", StaticFiles(directory="static"), name="static")
+    app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 @app.get("/{full_path:path}")
 async def serve_react_app(full_path: str):
-    # Don't interfere with API routes or root
-    if (full_path.startswith(("api/", "docs", "redoc", "scan", "report")) or 
-        full_path in ["", "favicon.ico"]):
+    # Don't interfere with API routes
+    if full_path.startswith(("api/", "docs", "redoc", "scan", "report")):
         raise HTTPException(status_code=404, detail="Not found")
+    # For all other paths, serve the React app
     return FileResponse("static/index.html")
 
 if __name__ == "__main__":
