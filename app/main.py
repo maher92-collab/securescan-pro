@@ -36,7 +36,11 @@ scanner = SecurityScanner()
 report_generator = ReportGenerator()
 
 @app.get("/")
-async def root():
+async def serve_frontend():
+    return FileResponse("static/index.html")
+
+@app.get("/api/")
+async def api_root():
     return {"message": "SecureScan Pro API", "version": "1.0.0"}
 
 @app.post("/scan", response_model=ScanResponse)
@@ -142,10 +146,11 @@ def update_progress(job_id: str, progress: int):
 if os.path.exists("static"):
     app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Serve React app for all non-API routes
 @app.get("/{full_path:path}")
 async def serve_react_app(full_path: str):
-    if full_path.startswith(("api", "docs", "redoc", "scan", "report")):
+    # Don't interfere with API routes or root
+    if (full_path.startswith(("api/", "docs", "redoc", "scan", "report")) or 
+        full_path in ["", "favicon.ico"]):
         raise HTTPException(status_code=404, detail="Not found")
     return FileResponse("static/index.html")
 
