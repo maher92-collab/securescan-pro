@@ -1,10 +1,8 @@
 # SecureScan Pro
 
-Advanced security scanning platform for comprehensive network and web application assessments. Built with FastAPI backend and React frontend, featuring modern UI design matching your provided screenshot.
+SecureScan Pro is a security scanning tool I’ve built for checking networks and web apps. It has a FastAPI backend and React frontend, with a clean modern UI (dark mode, glass style) that matches the design I had in mind.
 
-Live Demo
-
-Try SecureScan Pro live : https://securescan-pro-49m9.onrender.com/
+👉 Live Demo: SecureScan Pro
 
 Main interface
 <img width="1911" height="912" alt="main interface" src="https://github.com/user-attachments/assets/3738ab22-a4eb-4b48-8fe8-57beb9e60e09" />
@@ -17,18 +15,18 @@ Security report
 
 SecureScan Pro - Security Assessment Report
 
-## 🌟 Features
+## 🔥 Main Features
 
-- **TCP Port Scanning** - Discover open ports with banner grabbing
-- **HTTP Security Headers Analysis** - Check for missing or misconfigured security headers
-- **TLS/SSL Analysis** - Identify weak TLS versions and cipher suites
-- **CVE Vulnerability Mapping** - Map discovered services to known vulnerabilities
-- **Quick vs Deep Scans** - Choose scan intensity based on time constraints
-- **Modern UI** - Dark theme with glassmorphism effects matching the provided design
-- **Report Generation** - Export results as PDF or JSON![Uploading main interface.png…]()
+- Port scanning (TCP) – Finds open ports and grabs banners
+- HTTP header check – Looks for missing or weak security headers
+- TLS/SSL analysis – Spots outdated protocols, weak ciphers, and certificate issues
+- CVE mapping – Links detected services to known vulnerabilities
+- Quick or deep scans – Run fast scans or go more detailed if you’ve got the time
+- Modern UI – Dark theme, glassmorphism, smooth interface
+- Reports – Export results to PDF or JSON
 
-- **Real-time Progress** - Live scan progress updates
-- **RESTful API** - Well-documented API endpoints
+- Live progress – See scan results as they happen
+- REST API – Full API support with documentation
 
 ## 🏗️ Architecture
 
