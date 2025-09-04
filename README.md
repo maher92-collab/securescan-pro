@@ -2,7 +2,7 @@
 
 SecureScan Pro is a security scanning tool I’ve built for checking networks and web apps. It has a FastAPI backend and React frontend, with a clean modern UI (dark mode, glass style) that matches the design I had in mind.
 
-👉 Live Demo: SecureScan Pro
+👉 Live Demo: [SecureScan Pro](https://securescan-pro-49m9.onrender.com/)
 
 Main interface
 <img width="1911" height="912" alt="main interface" src="https://github.com/user-attachments/assets/3738ab22-a4eb-4b48-8fe8-57beb9e60e09" />
