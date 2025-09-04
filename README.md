@@ -265,7 +265,7 @@ I haven't deployed SecureScan Pro to Kubernetes yet, but this is the starting po
 
 ## Kubernetes Deployment
 
-
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -289,7 +289,7 @@ Note: Still need to add Redis service and proper networking configuration
 
 ## CI/CD with GitHub Actions
 
-yaml
+```
 - **AAutomated testing (frontend + backend)** 
 - **Code linting and type checks** 
 - **Security scanning with Trivy** 
