@@ -1,6 +1,6 @@
 # SecureScan Pro
 
-SecureScan Pro is a security scanning tool I’ve built for checking networks and web apps. It has a FastAPI backend and React frontend, with a clean modern UI (dark mode, glass style) that matches the design I had in mind.
+I built this security scanner while learning about network security and full-stack dev. It's pretty basic but does the job - scans networks/websites and spits out a report. The UI is dark themed because I got tired of white backgrounds.
 
 Live Demo: [SecureScan Pro](https://securescan-pro-49m9.onrender.com/)
 
@@ -346,6 +346,11 @@ curl -f http://localhost:8000/ || exit 1
 
 curl -f http://localhost:8000/health || exit 1
 ```
+## Known Issues
+- Scans can be slow on larger networks
+- The UI could use some work
+- Error handling isn't great yet
+- No user authentication (anyone can use it)
 
 ## Contributing
 
