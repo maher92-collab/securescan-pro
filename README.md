@@ -13,8 +13,6 @@ Scanning in progress
 Security report
 <img width="1907" height="913" alt="security report 1" src="https://github.com/user-attachments/assets/939443dd-aaf3-4d17-9b07-cc693ea41ea1" />
 
-SecureScan Pro - Security assessment report
-
 ##  Main Features
 
 - Port scanning - checks what's open on the target
