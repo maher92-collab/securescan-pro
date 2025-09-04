@@ -380,10 +380,6 @@ curl -f http://localhost:8000/health || exit 1
 - **Tests**: Maintain >90% coverage
 - **Documentation**: Update README for new features
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **FastAPI** - Modern Python web framework
