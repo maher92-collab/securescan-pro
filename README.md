@@ -51,14 +51,14 @@ SecureScan Pro - Security Assessment Report
 ### Using Docker Compose (Recommended)
 
 ```bash
-# Clone the repository
+
 git clone https://github.com/yourusername/securescan-pro.git
 cd securescan-pro
 
-# Start all services
+
 docker-compose up -d
 
-# Access the application
+
 open http://localhost:8000
 ```
 
@@ -67,13 +67,13 @@ open http://localhost:8000
 #### Backend Setup
 
 ```bash
-# Install Python dependencies
+
 pip install -r requirements.txt
 
-# Start Redis
+
 redis-server
 
-# Start FastAPI server
+
 uvicorn app.main:app --reload
 ```
 
@@ -82,10 +82,8 @@ uvicorn app.main:app --reload
 ```bash
 cd frontend
 
-# Install dependencies
 npm install
 
-# Start React development server
 npm start
 ```
 
@@ -123,10 +121,9 @@ GET /report/{job_id}.json
 
 ### Backend Tests
 ```bash
-# Run all tests with coverage
+
 pytest tests/ -v --cov=app
 
-# Run specific test file
 pytest tests/test_scanner.py -v
 ```
 
@@ -141,23 +138,22 @@ npm test
 ### Environment Variables
 
 ```bash
-# Backend Configuration
+
 ENVIRONMENT=development|production
 REDIS_URL=redis://localhost:6379
 API_HOST=0.0.0.0
 API_PORT=8000
 
-# Frontend Configuration
+
 REACT_APP_API_URL=http://localhost:8000
 ```
 
 ### Scan Configuration
 
 ```python
-# Common ports (Quick Scan)
+
 COMMON_PORTS = [21, 22, 23, 25, 53, 80, 110, 143, 443, 993, 995, 8080, 8443]
 
-# Extended ports (Deep Scan)  
 EXTENDED_PORTS = range(1, 1025) + [1433, 1521, 3306, 3389, 5432, 5900, 8000, 8080, 8443, 9000]
 ```
 
@@ -167,30 +163,30 @@ EXTENDED_PORTS = range(1, 1025) + [1433, 1521, 3306, 3389, 5432, 5900, 8000, 808
 
 ```
 securescan-pro/
-├── app/                    # FastAPI backend
-│   ├── main.py            # Main application
-│   ├── models.py          # Pydantic models
-│   ├── scanner.py         # Security scanner engine
-│   └── report_generator.py # PDF/JSON report generation
-├── frontend/              # React frontend
+├── app/                   
+│   ├── main.py            
+│   ├── models.py          
+│   ├── scanner.py         
+│   └── report_generator.py 
+├── frontend/              
 │   ├── src/
-│   │   ├── App.js         # Main React component
-│   │   ├── App.css        # Styling with Tailwind
-│   │   └── index.js       # Entry point
-│   ├── package.json       # Node dependencies
-│   └── tailwind.config.js # Tailwind configuration
-├── tests/                 # Unit tests
-│   ├── test_main.py       # API endpoint tests
-│   ├── test_scanner.py    # Scanner engine tests
-│   └── test_models.py     # Model validation tests
+│   │   ├── App.js         
+│   │   ├── App.css        
+│   │   └── index.js       
+│   ├── package.json       
+│   └── tailwind.config.js 
+├── tests/                 
+│   ├── test_main.py       
+│   ├── test_scanner.py    
+│   └── test_models.py     
 ├── .github/
 │   └── workflows/
-│       └── ci-cd.yml      # GitHub Actions CI/CD
-├── docker-compose.yml     # Production setup
-├── docker-compose.dev.yml # Development setup
-├── Dockerfile            # Multi-stage build
-├── requirements.txt      # Python dependencies
-└── README.md            # This file
+│       └── ci-cd.yml     
+├── docker-compose.yml     
+├── docker-compose.dev.yml 
+├── Dockerfile            
+├── requirements.txt     
+└── README.md            
 ```
 
 ### Adding New Scan Components
@@ -204,7 +200,7 @@ class ScanComponent(str, Enum):
 2. **Implement scanner logic** in `scanner.py`:
 ```python
 async def _new_component_scan(self, target: str) -> List[Dict[str, Any]]:
-    # Your scanning logic here
+    
     pass
 ```
 
@@ -267,13 +263,13 @@ const componentLabels = {
 ### Docker Production Deployment
 
 ```bash
-# Build and start services
+
 docker-compose up -d
 
-# View logs
+
 docker-compose logs -f app
 
-# Scale the application
+
 docker-compose up -d --scale app=3
 ```
 
@@ -348,25 +344,25 @@ The project includes a comprehensive CI/CD pipeline:
 
 ### Application Metrics
 ```python
-# Add to main.py for production monitoring
+
 from prometheus_client import Counter, Histogram
 import logging
 
-# Metrics
+
 scan_counter = Counter('scans_total', 'Total number of scans')
 scan_duration = Histogram('scan_duration_seconds', 'Scan duration')
 
-# Logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 ```
 
 ### Health Checks
 ```bash
-# Docker health check
+
 curl -f http://localhost:8000/ || exit 1
 
-# Kubernetes liveness probe
+
 curl -f http://localhost:8000/health || exit 1
 ```
 
