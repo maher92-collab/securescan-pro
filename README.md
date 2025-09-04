@@ -286,7 +286,7 @@ spec:
         ports:
         - containerPort: 8000
 
-### CI/CD with GitHub Actions
+###CI/CD with GitHub Actions
 
 - **AAutomated testing (frontend + backend)** 
 - **Code linting and type checks** 
