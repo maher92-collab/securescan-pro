@@ -393,9 +393,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **GitHub Actions** - CI/CD automation
 
 ## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/securescan-pro/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/securescan-pro/discussions)
 - **Email**: maher.92@hotmail.com
 
 ---
