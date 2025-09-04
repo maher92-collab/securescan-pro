@@ -15,7 +15,10 @@ Security report
 
 SecureScan Pro - Security Assessment Report
 
-## 🔥 Main Features
+## Why I Built This
+I wanted to learn more about network security while practicing full-stack development. This project let me explore both frontend React development and backend security concepts in a practical way.
+
+##  Main Features
 
 - Port scanning (TCP) – Finds open ports and grabs banners
 - HTTP header check – Looks for missing or weak security headers
@@ -31,17 +34,9 @@ SecureScan Pro - Security Assessment Report
 ## 🏗️ Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   React Frontend │    │  FastAPI Backend │    │   Redis Cache   │
-│   (Port 3000)   │◄──►│   (Port 8000)   │◄──►│   (Port 6379)   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │                       ▼                       │
-         │              ┌─────────────────┐              │
-         │              │  Security       │              │
-         └──────────────┤  Scanner        │──────────────┘
-                        │  Engine         │
-                        └─────────────────┘
+React Frontend ↔ FastAPI Backend ↔ Redis Cache
+     ↓               ↓               ↓
+     └─── Security Scanner Engine ───┘
 ```
 
 ## 🚀 Quick Start
@@ -120,8 +115,9 @@ GET /report/{job_id}.json
 ### Backend Tests
 ```bash
 
+# Run all tests with coverage
 pytest tests/ -v --cov=app
-
+# Run specific test file
 pytest tests/test_scanner.py -v
 ```
 
@@ -358,7 +354,7 @@ curl -f http://localhost:8000/health || exit 1
 1. **Fork repo**
 2. **Create branch** (`git checkout -b feature/amazing-feature`)
 3. **Commit changes** (`git commit -m 'Add amazing feature'`)
-4. **Push + open PR* (`git push origin feature/amazing-feature`)
+4. **git push** origin feature/amazing-feature`)
 
 ### Code Standards
 - **Python**: PEP8 + type hints
