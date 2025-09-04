@@ -20,8 +20,8 @@ I wanted to learn more about network security while practicing full-stack develo
 
 ##  Main Features
 
-- Port scanning (TCP) – Finds open ports and grabs banners
-- HTTP header check – Looks for missing or weak security headers
+- Port scanning - checks what's open on the target
+- Security headers - sees if basic protections are missing
 - TLS/SSL analysis – Spots outdated protocols, weak ciphers, and certificate issues
 - CVE mapping – Links detected services to known vulnerabilities
 - Quick or deep scans – Run fast scans or go more detailed if you’ve got the time
@@ -264,7 +264,7 @@ docker-compose up -d --scale app=3
 ### Kubernetes
 ```### Kubernetes (experimental)
 
-I haven't deployed SecureScan Pro to Kubernetes yet, but this is the starting point I drafted for testing on a local cluster (minikube):
+# note: this is just a draft, haven't actually deployed to k8s yet
 
 ```yaml
 apiVersion: apps/v1
@@ -357,10 +357,9 @@ curl -f http://localhost:8000/health || exit 1
 4. **git push** origin feature/amazing-feature`)
 
 ### Code Standards
-- **Python**: PEP8 + type hints
-- **JS**: ESLint rules
-- **Tests**: 90%+ coverage
-- **Docs updated when needed**
+- Try to follow Python best practices
+- Keep the code reasonably clean
+- Tests are appreciated but don't stress about coverage
 
 ## Thanks to
 
