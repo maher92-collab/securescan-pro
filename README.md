@@ -215,10 +215,10 @@ const componentLabels = {
 };
 ```
 
-## 🔍 Security Features
+## 🔍 Security Details
 
 ### Port Scanning
-- **TCP Connect Scanning** - Full connection establishment
+- **TCP connect scan** - Full connection establishment
 - **Service Detection** - Identify running services
 - **Banner Grabbing** - Collect service version information
 - **Concurrent Scanning** - Async I/O for performance
