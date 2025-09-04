@@ -50,7 +50,7 @@ SecureScan Pro - Security Assessment Report
 
 ```bash
 
-git clone https://github.com/yourusername/securescan-pro.git
+git clone https://github.com/maher92-collab/securescan-pro.git
 cd securescan-pro
 
 
