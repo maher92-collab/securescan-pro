@@ -218,43 +218,37 @@ const componentLabels = {
 ## 🔍 Security Details
 
 ### Port Scanning
-- **TCP connect scan** - Full connection establishment
-- **Service Detection** - Identify running services
-- **Banner Grabbing** - Collect service version information
-- **Concurrent Scanning** - Async I/O for performance
+- **TCP connect scan** 
+- **Service detection** 
+- **Banner grabbing ** - (service versions)
+- **Async scanning for speed** 
 
-### HTTP Security Headers
-- **Strict-Transport-Security** - HSTS implementation
-- **Content-Security-Policy** - CSP configuration
-- **X-Frame-Options** - Clickjacking protection
-- **X-Content-Type-Options** - MIME type sniffing
-- **X-XSS-Protection** - XSS filtering
-- **Referrer-Policy** - Referrer information control
+### HTTP Headers
+- **Checks for HSTS, CSP, X-Frame-Options, X-Content-Type, XSS-Protection, Referrer-Policy** 
 
 ### TLS/SSL Analysis
-- **Protocol Version Detection** - SSL 3.0, TLS 1.0-1.3
-- **Cipher Suite Analysis** - Strong vs weak ciphers
-- **Certificate Validation** - Chain and expiry checks
-- **Vulnerability Detection** - Known SSL/TLS issues
+- **Detects SSL 3.0, TLS 1.0–1.3** 
+- **Cipher suite strength check** 
+- **Cert validation (chain + expiry)** 
+- **Known SSL/TLS issues** 
 
 ### CVE Mapping
-- **Service Fingerprinting** - Match services to versions
-- **Vulnerability Database** - Local CVE mappings
-- **CVSS Scoring** - Risk assessment
-- **Remediation Guidance** - Actionable recommendations
+- **Service fingerprinting** 
+- **Local CVE database** 
+- **CVSS scoring** 
+- **Suggestions for fixing** 
 
-## 📊 Report Features
+## 📊 Reports
 
-### PDF Reports
-- **Executive Summary** - High-level overview
-- **Detailed Findings** - Technical details
-- **Risk Assessment** - Severity-based categorization
-- **Recommendations** - Actionable remediation steps
+### PDF
+- **Summary + technical details** 
+- **Risk levels** 
+- **Recommendations** 
 
-### JSON Reports
-- **Machine Readable** - API integration friendly
-- **Complete Data** - All scan results included
-- **Structured Format** - Easy parsing and analysis
+### JSON
+- **Machine-readable** 
+- **Full data included** 
+- **Easy to parse** 
 
 ## 🚀 Deployment
 
@@ -299,44 +293,39 @@ spec:
           value: "redis://redis-service:6379"
 ```
 
-### GitHub Actions CI/CD
+### CI/CD with GitHub Actions
 
-The project includes a comprehensive CI/CD pipeline:
+- **AAutomated testing (frontend + backend)** 
+- **Code linting and type checks** 
+- **Security scanning with Trivy** 
+- **Docker multi-platform builds** 
+- **Auto deployment** 
+- **Slack build notifications** 
 
-- **Automated Testing** - Backend and frontend tests
-- **Code Quality** - Linting and type checking
-- **Security Scanning** - Trivy vulnerability scanner
-- **Docker Build** - Multi-platform image builds
-- **Deployment** - Automated production deployment
-- **Notifications** - Slack integration for build status
+## 🔧 Performance
 
-## 🔧 Performance Optimization
+### Backend
+- **Async I/O** 
+- **Connection pooling** 
+- **Redis caching** 
+- **Background tasks** 
 
-### Backend Optimizations
-- **Async I/O** - Non-blocking network operations
-- **Connection Pooling** - Efficient resource utilization
-- **Caching** - Redis for job state management
-- **Background Tasks** - Non-blocking scan execution
+### Frontend
+- **Code splitting** - (lazy loading)
+- **React.memo** 
+- **Virtual scrolling** 
+- **Progressive loading** 
 
-### Frontend Optimizations
-- **Code Splitting** - Lazy loading components
-- **Memoization** - React.memo for performance
-- **Virtual Scrolling** - Handle large result sets
-- **Progressive Loading** - Stream scan results
-
-## 🛡️ Security Considerations
+## 🛡️ Security Built-In
 
 ### Input Validation
-- **Domain/IP Validation** - Regex-based validation
-- **Rate Limiting** - Prevent abuse
-- **Sanitization** - Clean user inputs
-- **CORS Configuration** - Proper cross-origin setup
-
-### Network Security
-- **Non-privileged Ports** - Run without root
-- **Network Isolation** - Docker networking
-- **TLS Encryption** - HTTPS in production
-- **Authentication** - JWT token support
+- **Input validation** - (domain/IP regex)
+- **Rate limiting** 
+- **Input sanitization** 
+- **Proper CORS setup**
+- **Non-root ports + Docker isolation**
+- **HTTPS in prod**
+- **JWT authentication**
 
 ## 📈 Monitoring & Logging
 
@@ -366,29 +355,28 @@ curl -f http://localhost:8000/health || exit 1
 
 ## 🤝 Contributing
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
-4. **Push to the branch** (`git push origin feature/amazing-feature`)
-5. **Open a Pull Request**
+1. **Fork repo**
+2. **Create branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit changes** (`git commit -m 'Add amazing feature'`)
+4. **Push + open PR* (`git push origin feature/amazing-feature`)
 
 ### Code Standards
-- **Python**: Follow PEP 8, use type hints
-- **JavaScript**: ESLint configuration included
-- **Tests**: Maintain >90% coverage
-- **Documentation**: Update README for new features
+- **Python**: PEP8 + type hints
+- **JS**: ESLint rules
+- **Tests**: 90%+ coverage
+- **Docs updated when needed**
 
-## 🙏 Acknowledgments
+## 🙏 Thanks to
 
-- **FastAPI** - Modern Python web framework
-- **React** - Frontend library
-- **Tailwind CSS** - Utility-first CSS framework
-- **Docker** - Containerization platform
-- **GitHub Actions** - CI/CD automation
+- **FastAPI** 
+- **React** 
+- **Tailwind CSS** 
+- **Docker** 
+- **GitHub Actions** 
 
 ## 📞 Support
 - **Email**: maher.92@hotmail.com
 
 ---
 
-**⚠️ Disclaimer**: This tool is for authorized security testing only. Always ensure you have explicit permission before scanning any systems or networks that you do not own.
+**⚠️ Disclaimer**: Only use this tool on systems/networks you own or have permission to test.
