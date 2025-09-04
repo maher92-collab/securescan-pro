@@ -261,7 +261,7 @@ docker-compose logs -f app
 docker-compose up -d --scale app=3
 ```
 
-## Kubernetes Deployment
+## Kubernetes
 
 I haven't deployed SecureScan Pro to Kubernetes yet, but this is the starting point I drafted for testing on a local cluster (minikube):
 
@@ -286,7 +286,7 @@ spec:
         ports:
         - containerPort: 8000
 
-###CI/CD with GitHub Actions
+### CI/CD with GitHub Actions
 
 - **AAutomated testing (frontend + backend)** 
 - **Code linting and type checks** 
