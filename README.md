@@ -216,7 +216,7 @@ const componentLabels = {
 ### Port Scanning
 - **TCP connect scan** 
 - **Service detection** 
-- **Banner grabbing ** - (service versions)
+- **Banner grabbing** - (service versions)
 - **Async scanning for speed** 
 
 ### HTTP Headers
