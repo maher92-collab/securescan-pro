@@ -285,7 +285,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: yourusername/securescan-pro:latest
+        image: maher92-collab/securescan-pro:latest
         ports:
         - containerPort: 8000
         env:
