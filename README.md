@@ -261,10 +261,9 @@ docker-compose logs -f app
 docker-compose up -d --scale app=3
 ```
 
-### Kubernetes
-```### Kubernetes (experimental)
+## Kubernetes Deployment
 
-# note: this is just a draft, haven't actually deployed to k8s yet
+I haven't deployed SecureScan Pro to Kubernetes yet, but this is the starting point I drafted for testing on a local cluster (minikube):
 
 ```yaml
 apiVersion: apps/v1
@@ -286,8 +285,6 @@ spec:
         image: maher92-collab/securescan-pro:latest
         ports:
         - containerPort: 8000
-
-note: Still need to add Redis service and proper networking configuration
 
 ### CI/CD with GitHub Actions
 
