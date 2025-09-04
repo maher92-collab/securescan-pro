@@ -1,22 +1,19 @@
 # SecureScan Pro
 
-I built this security scanner while learning about network security and full-stack dev. It's pretty basic but does the job - scans networks/websites and spits out a report. The UI is dark themed because I got tired of white backgrounds.
+I built this security scanner about network security and full-stack dev. It's pretty basic but does the job - scans networks/websites and spits out a report. The UI is dark themed because I got tired of white backgrounds.
 
 Live Demo: [SecureScan Pro](https://securescan-pro-49m9.onrender.com/)
 
 Main interface
 <img width="1911" height="912" alt="main interface" src="https://github.com/user-attachments/assets/3738ab22-a4eb-4b48-8fe8-57beb9e60e09" />
 
-Scanning in Progress
+Scanning in progress
 <img width="1914" height="918" alt="scanning in progress" src="https://github.com/user-attachments/assets/be4f428d-a646-459a-a6a3-4be1acfac577" />
 
 Security report
 <img width="1907" height="913" alt="security report 1" src="https://github.com/user-attachments/assets/939443dd-aaf3-4d17-9b07-cc693ea41ea1" />
 
-SecureScan Pro - Security Assessment Report
-
-## Why I Built This
-I wanted to learn more about network security while practicing full-stack development. This project let me explore both frontend React development and backend security concepts in a practical way.
+SecureScan Pro - Security assessment report
 
 ##  Main Features
 
