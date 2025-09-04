@@ -351,10 +351,10 @@ curl -f http://localhost:8000/health || exit 1
 
 ## Contributing
 
-1. **Fork repo**
-2. **Create branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit changes** (`git commit -m 'Add amazing feature'`)
-4. **git push** origin feature/amazing-feature`)
+- Fork repo
+- Create branch (`git checkout -b feature/amazing-feature`)
+- Commit changes (`git commit -m 'Add amazing feature'`)
+- git push origin feature/amazing-feature`)
 
 ### Code Standards
 - Try to follow Python best practices
