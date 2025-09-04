@@ -48,7 +48,7 @@ SecureScan Pro - Security Assessment Report
 
 ## 🚀 Quick Start
 
-### Using Docker Compose (Recommended)
+### Using Docker Compose 
 
 ```bash
 
