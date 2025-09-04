@@ -261,9 +261,9 @@ docker-compose logs -f app
 docker-compose up -d --scale app=3
 ```
 
-## Kubernetes Deployment
-
 I haven't deployed SecureScan Pro to Kubernetes yet, but this is the starting point I drafted for testing on a local cluster (minikube):
+
+## Kubernetes Deployment
 
 ```yaml
 apiVersion: apps/v1
