@@ -2,7 +2,7 @@
 
 SecureScan Pro is a security scanning tool I’ve built for checking networks and web apps. It has a FastAPI backend and React frontend, with a clean modern UI (dark mode, glass style) that matches the design I had in mind.
 
-👉 Live Demo: [SecureScan Pro](https://securescan-pro-49m9.onrender.com/)
+Live Demo: [SecureScan Pro](https://securescan-pro-49m9.onrender.com/)
 
 Main interface
 <img width="1911" height="912" alt="main interface" src="https://github.com/user-attachments/assets/3738ab22-a4eb-4b48-8fe8-57beb9e60e09" />
@@ -31,7 +31,7 @@ I wanted to learn more about network security while practicing full-stack develo
 - Live progress – See scan results as they happen
 - REST API – Full API support with documentation
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 React Frontend ↔ FastAPI Backend ↔ Redis Cache
@@ -39,7 +39,7 @@ React Frontend ↔ FastAPI Backend ↔ Redis Cache
      └─── Security Scanner Engine ───┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Using Docker Compose 
 
@@ -80,7 +80,7 @@ npm install
 npm start
 ```
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Start Scan
 ```http
@@ -110,7 +110,7 @@ GET /report/{job_id}.pdf
 GET /report/{job_id}.json
 ```
 
-## 🧪 Testing
+##  Testing
 
 ### Backend Tests
 ```bash
@@ -127,7 +127,7 @@ cd frontend
 npm test
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -151,7 +151,7 @@ COMMON_PORTS = [21, 22, 23, 25, 53, 80, 110, 143, 443, 993, 995, 8080, 8443]
 EXTENDED_PORTS = range(1, 1025) + [1433, 1521, 3306, 3389, 5432, 5900, 8000, 8080, 8443, 9000]
 ```
 
-## 🛠️ Development
+##  Development
 
 ### Project Structure
 
@@ -211,7 +211,7 @@ const componentLabels = {
 };
 ```
 
-## 🔍 Security Details
+##  Security Details
 
 ### Port Scanning
 - **TCP connect scan** 
@@ -234,7 +234,7 @@ const componentLabels = {
 - **CVSS scoring** 
 - **Suggestions for fixing** 
 
-## 📊 Reports
+##  Reports
 
 ### PDF
 - **Summary + technical details** 
@@ -246,7 +246,7 @@ const componentLabels = {
 - **Full data included** 
 - **Easy to parse** 
 
-## 🚀 Deployment
+##  Deployment
 
 ### Docker Production Deployment
 
@@ -298,7 +298,7 @@ note: Still need to add Redis service and proper networking configuration
 - **Auto deployment** 
 - **Slack build notifications** 
 
-## 🔧 Performance
+##  Performance
 
 ### Backend
 - **Async I/O** 
@@ -312,7 +312,7 @@ note: Still need to add Redis service and proper networking configuration
 - **Virtual scrolling** 
 - **Progressive loading** 
 
-## 🛡️ Security Built-In
+##  Security Built-In
 
 ### Input Validation
 - **Input validation** - (domain/IP regex)
@@ -323,7 +323,7 @@ note: Still need to add Redis service and proper networking configuration
 - **HTTPS in prod**
 - **JWT authentication**
 
-## 📈 Monitoring & Logging
+##  Monitoring & Logging
 
 ### Application Metrics
 ```python
@@ -349,7 +349,7 @@ curl -f http://localhost:8000/ || exit 1
 curl -f http://localhost:8000/health || exit 1
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. **Fork repo**
 2. **Create branch** (`git checkout -b feature/amazing-feature`)
@@ -362,7 +362,7 @@ curl -f http://localhost:8000/health || exit 1
 - **Tests**: 90%+ coverage
 - **Docs updated when needed**
 
-## 🙏 Thanks to
+## Thanks to
 
 - **FastAPI** 
 - **React** 
@@ -370,9 +370,9 @@ curl -f http://localhost:8000/health || exit 1
 - **Docker** 
 - **GitHub Actions** 
 
-## 📞 Support
+## Support
 - **Email**: maher.92@hotmail.com
 
 ---
 
-**⚠️ Disclaimer**: Only use this tool on systems/networks you own or have permission to test.
+** Disclaimer**: Only use this tool on systems/networks you own or have permission to test.
