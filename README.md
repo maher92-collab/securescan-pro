@@ -264,7 +264,7 @@ docker-compose up -d --scale app=3
 I haven't deployed SecureScan Pro to Kubernetes yet, but this is the starting point I drafted for testing on a local cluster (minikube):
 
 ## Kubernetes Deployment
-
+```
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -286,10 +286,9 @@ spec:
         ports:
         - containerPort: 8000
 Note: Still need to add Redis service and proper networking configuration
-
+```
 ## CI/CD with GitHub Actions
 
-```
 - **AAutomated testing (frontend + backend)** 
 - **Code linting and type checks** 
 - **Security scanning with Trivy** 
