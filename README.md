@@ -287,7 +287,7 @@ spec:
         - containerPort: 8000
 Note: Still need to add Redis service and proper networking configuration
 
-### CI/CD with GitHub Actions
+## CI/CD with GitHub Actions
 
 - **AAutomated testing (frontend + backend)** 
 - **Code linting and type checks** 
